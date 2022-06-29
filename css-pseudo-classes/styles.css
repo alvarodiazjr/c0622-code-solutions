@@ -1,0 +1,20 @@
+button {
+  padding: 10px 30px 10px 30px;
+  text-align: center;
+  font-size: 25px;
+}
+
+button:hover{
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+tr.gray {
+  background-color: rgb(212, 207, 207);
+}
+
+thead.black {
+  background-color: black;
+  color: white;
+}

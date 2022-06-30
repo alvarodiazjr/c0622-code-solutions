@@ -1,0 +1,17 @@
+.container{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row{
+  display: flex;
+}
+
+.column-full{
+  width: 100%;
+}
+
+.column-one-fourth img{
+  width: 100%;
+}

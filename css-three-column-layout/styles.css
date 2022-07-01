@@ -12,15 +12,7 @@
   background-color: #1896d9;
 }
 
-.column-one-third{
-  flex-basis: calc(100%/3);
-}
-
-.column-two-thirds{
-  flex-basis: calc(100%/3);
-}
-
-.column-third{
+.column{
   flex-basis: calc(100%/3);
 }
 
@@ -31,7 +23,6 @@
 
 .justify-center h3, p{
   padding: 5px;
-  justify-content: center;
 }
 
 .image-border{

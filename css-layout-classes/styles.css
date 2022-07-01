@@ -9,7 +9,7 @@
 }
 
 .column-full{
-  width: 100%;
+  flex-basis: 100%;
 }
 
 .column-one-fourth img{
@@ -17,13 +17,13 @@
 }
 
 .column-one-third{
-  width: 100%;
+  flex-basis: calc(100%/3);
 }
 
 .column-one-fourth{
-  width: 100%;
+  flex-basis: 25%;
 }
 
 .column-half{
-  width: 100%;
+  flex-basis: 50%;
 }

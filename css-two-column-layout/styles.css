@@ -1,0 +1,64 @@
+.container{
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row{
+  display: flex;
+}
+
+.column{
+  flex-basis: calc(100%/4);
+}
+
+.column-img{
+  flex-basis: calc(100%/4);
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.justify-center{
+  text-align: center;
+  justify-content: center;
+}
+
+.column h3, p{
+  font-weight: 400;
+  font-family: Karla;
+  text-align: left;
+}
+
+h1{
+  font-weight: 700;
+  font-family: Karla;
+}
+
+button{
+  width: 500;
+  padding: 10px 30px 10px 30px;
+  border-style: solid;
+  border-width: thin;
+  color: red;
+  background-color: white;
+  border-color: red;
+  font-family: Karla;
+}
+
+.justify-center p{
+  text-align: center;
+}
+
+p{
+  font-size: 15px;
+}
+
+.margin-right{
+  margin-right: -50px;
+}
+
+.margin-left{
+  margin-right: -50px;
+  margin-left: 75px;
+}

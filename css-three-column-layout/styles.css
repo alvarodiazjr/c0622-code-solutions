@@ -12,7 +12,7 @@
   background-color: #1896d9;
 }
 
-.column{
+.column-one-third{
   flex-basis: calc(100%/3);
 }
 

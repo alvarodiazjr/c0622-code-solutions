@@ -16,6 +16,6 @@ var bookshelf = [
   }
 ];
 
-console.log('the second book is:', bookshelf[0].title + ' by ' + bookshelf[0].author);
+console.log('the second books author is:', bookshelf[1].author);
 console.log('the first books ISBN is:', bookshelf[0].isbn);
 console.log('the title of the third book is:', bookshelf[2].title);

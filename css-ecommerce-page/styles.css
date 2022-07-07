@@ -1,0 +1,49 @@
+.container{
+  max-width: 800px;
+  margin: auto auto;
+}
+
+.row{
+  display: flex;
+}
+
+.column-full{
+  flex-basis: 100%;
+}
+
+.column-one-fifth{
+  flex-basis: 20%;
+}
+
+h1, p{
+  font-family: 'DM Sans';
+}
+
+.align-center{
+  text-align: center;
+}
+
+.gray-text{
+  color: rgb(212, 209, 209);
+}
+
+.line-through{
+  text-decoration: line-through;
+}
+
+.pink-background{
+  background-color: rgb(252, 219, 209);
+}
+
+.contain{
+  object-fit: cover;
+}
+
+img{
+  height: 450px;
+  width: 300px;
+}
+
+.justify-content{
+  justify-content: center;
+}

@@ -32,11 +32,17 @@ h1, p{
 }
 
 .pink-background{
-  background-color: rgb(252, 219, 209);
+  border-radius: 5px;
+  background-color: rgb(255, 241, 238);
 }
 
 .contain{
   object-fit: cover;
+}
+
+.margin{
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 img{

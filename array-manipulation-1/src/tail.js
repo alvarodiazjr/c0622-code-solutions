@@ -6,10 +6,8 @@
 */
 function tail(array) {
   var tailArr = [];
-  for(var i = 0; i < array.length; i++){
-    if(i > 0){
-      tailArr.push(array[i]);
-    }
+  for(var i = 1; i < array.length; i++){
+    tailArr.push(array[i]);
   }
   return tailArr;
 }

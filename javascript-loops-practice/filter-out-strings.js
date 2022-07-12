@@ -1,8 +1,10 @@
 /* exported filterOutStrings */
-function filterOutStrings(values) {
-  var value = [];
-  for (var i = 0; i < values.length; i++) {
-    value.push(values[i]);
-    var noStrings = value.filter(x => typeof x !== 'string')
-  } return noStrings;
+function filterOutStrings(value) {
+  var noStrings = [];
+  for(var i = 0; i < value.length; i++){
+    if(typeof value[i] !== 'string'){
+      noStrings.push(value[i]);
+    }
+  }
+  return noStrings;
 }

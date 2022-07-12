@@ -5,6 +5,7 @@ if the number is even change the number to 'even'
 if the number is odd change the number to 'odd'
 */
 function oddOrEven(numbers) {
+  var oddOrEvenNumbers = [];
   for(var i = 0; i < numbers.length; i++) {
     if(numbers[i] % 2 === 0) {
       numbers[i] = 'even';
@@ -12,6 +13,7 @@ function oddOrEven(numbers) {
     else if(numbers[i] % 2 !== 0) {
       numbers[i] = 'odd';
     }
+    oddOrEvenNumbers.push(numbers[i]);
   }
-  return numbers;
+  return oddOrEvenNumbers;
 }

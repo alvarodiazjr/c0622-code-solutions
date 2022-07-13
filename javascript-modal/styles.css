@@ -1,0 +1,41 @@
+.container {
+  max-width: auto;
+  margin: auto;
+  position: relative;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.purple {
+  color: white;
+  background-color: rgb(100, 36, 173);
+  border-radius: 5px;
+  border-style: none;
+  padding: 10px 30px;
+  font-size: 30px;
+}
+
+.pink {
+  color: white;
+  background-color: rgb(233, 100, 83);
+  border-radius: 5px;
+  border-style: none;
+  padding: 5px 25px;
+  font-size: 20px;
+}
+
+.modal{
+  background-color: white;
+  position: fixed;
+  top: 5rem;
+  bottom: 5rem;
+  left: 5rem;
+  right: 5rem;
+  display: none;
+}

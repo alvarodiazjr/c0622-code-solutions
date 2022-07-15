@@ -22,10 +22,10 @@ console.log("typeof books:", typeof books);
 console.log('JSON.stringify:', JSON.stringify(books))
 console.log('typeof JSON:', typeof JSON.stringify(books));
 
-var student = {"id": "7339185", "name": "Alvaro Diaz"};
+var student = '{"id": 7339185, "name": "Alvaro Diaz"}';
 
 console.log('JSON format string:', student)
 console.log('type of string:', typeof student);
 
-console.log('JSON.parse:', JSON.parse('{"id": "7339185", "name": "Alvaro Diaz"}'));
-console.log('typeof JSON.parse:', typeof JSON.parse('{"id": "7339185", "name": "Alvaro Diaz"}'));
+console.log('JSON.parse:', JSON.parse(student));
+console.log('typeof JSON.parse:', typeof JSON.parse(student));

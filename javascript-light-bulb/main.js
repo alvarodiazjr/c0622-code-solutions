@@ -1,12 +1,15 @@
 /*
-- once the click occurs change the two class names.
-- once you click the button again it changes back to the original.
+-if the button is clicked change the class from light to dark.
+- if the button is clicked again change it from dark to light.
 */
+
 var $button = document.querySelector('.button-color');
 
 var $pageColor = document.querySelector('html');
 
-function lightSwitch(event){
+var clicks = 0;
+
+/*function lightSwitch(event){
   if($button.className === 'button-color light' && $pageColor.className === 'html light'){
     $button.className = 'button-color dark';
     $pageColor.className = 'html dark';
@@ -14,6 +17,9 @@ function lightSwitch(event){
     $button.className = 'button-color light';
     $pageColor.className = 'html light';
   }
-}
 
-$button.addEventListener('click', lightSwitch);
+}*/
+
+$button.addEventListener('click', function (event){
+
+});

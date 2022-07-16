@@ -3,6 +3,10 @@
   margin: auto;
 }
 
+body{
+  font-family: "Tiempos Headline";
+}
+
 .row{
   display: flex;
 }
@@ -23,16 +27,26 @@
   justify-content: center;
 }
 
-h2, h3{
+.footer h3{
+  font-family: Avenir;
+}
+
+h2{
   color: rgb(92, 92, 92);
   font-weight: 400;
-  font-family: "Tiempos Headline";
+  font-family: "Tiempos Headline"
+}
+
+h3{
+  color: rgb(92, 92, 92);
+  font-weight: 400;
+  font-family: Avenir;
 }
 
 p{
   color: rgb(92, 92, 92);
   font-weight: 100;
-  font-family: "Tiempos Headline";
+  font-family: Avenir;
 }
 
 .text-center{
@@ -65,14 +79,18 @@ margin-bottom: 80px;
 }
 
 .white-text h1{
-  color: white;
+  font-weight: 500;
+  color: rgb(247, 245, 245);
 }
 
 .white-text h3{
-  color: white;
+  font-family: Avenir;
+  color: rgb(211, 211, 211);
 }
 
 .white-text p{
+  line-height: 1.5;
+  font-family: Avenir;
   color: white;
 }
 

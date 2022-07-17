@@ -59,3 +59,11 @@ h2{
   right: 5em;
   text-align: center;
 }
+
+.block-display{
+  display: block;
+}
+
+.display-none{
+  display: none;
+}

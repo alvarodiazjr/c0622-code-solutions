@@ -10,6 +10,7 @@ var $span = document.querySelectorAll('span');
 
 function typing(event){
   var key = event.key;
+  console.log(key);
   for(var i = 0; i < $span.length; i++){
     var letter = $span[i];
     if(letter.textContent === key){

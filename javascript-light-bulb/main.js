@@ -9,17 +9,13 @@ var $pageColor = document.querySelector('html');
 
 var clicks = 0;
 
-/*function lightSwitch(event){
-  if($button.className === 'button-color light' && $pageColor.className === 'html light'){
+$button.addEventListener('click', function (event){
+  clicks++;
+  if(clicks % 2 !== 0){
     $button.className = 'button-color dark';
     $pageColor.className = 'html dark';
-  } else if ($button.className === 'button-color dark' && $pageColor.className === 'html dark'){
+  } else if(clicks % 2 === 0){
     $button.className = 'button-color light';
     $pageColor.className = 'html light';
   }
-
-}*/
-
-$button.addEventListener('click', function (event){
-
 });

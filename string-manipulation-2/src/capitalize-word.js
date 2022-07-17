@@ -5,7 +5,7 @@
 */
 
 function capitalizeWord(word){
-  if(word == 'javascript'){
+  if(word.charAt(0) === 'j' || word.charAt(0) === 'J'){
     return 'JavaScript';
   }
   return word.charAt().toUpperCase() + word.slice(1).toLowerCase();

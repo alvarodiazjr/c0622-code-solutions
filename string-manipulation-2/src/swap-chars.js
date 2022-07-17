@@ -1,10 +1,13 @@
 /* exported swapChars */
+/*
+- access the firstIndex and assign it to the secondIndex
+- access the secondIndex and assign it to the firstIndex.
+- return the string with their characters swapped.
+*/
 function swapChars(firstIndex, secondIndex, string){
-  var newString = '';
-  for(var i = 0; i < string.length; i++){
-    if(string[i] === string.charAt(firstIndex)){
-      newString += string[i] = string.charAt(secondIndex);
-    }
-  }
-  return newString;
+  return string.substring(0, firstIndex)
+  + string[secondIndex]
+  + string.substring(firstIndex + 1, secondIndex)
+  + string[firstIndex]
+  + string.substring(secondIndex + 1);
 }

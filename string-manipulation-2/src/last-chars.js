@@ -5,10 +5,11 @@
 - check if the string.length is less than length
 - if so return the string as normal
 */
+
 function lastChars(length, string) {
   if (string.length > length) {
     return string.slice(-length);
-  } else if (string.length <= length) {
+  } else {
     return string;
   }
 }

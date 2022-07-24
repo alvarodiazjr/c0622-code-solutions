@@ -5,8 +5,9 @@
 */
 
 function capitalizeWord(word){
-  if(word.charAt(0) === 'j' || word.charAt(0) === 'J'){
+  word = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  if(word === 'Javascript'){
     return 'JavaScript';
   }
-  return word.charAt().toUpperCase() + word.slice(1).toLowerCase();
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }

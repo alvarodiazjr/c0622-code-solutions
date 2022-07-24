@@ -4,10 +4,10 @@
 - if string.length is less than or equal to length add '...'
 */
 
-function truncate(length, string){
-  if(string.length >= length){
+function truncate(length, string) {
+  if (string.length >= length) {
     return string.slice(0, length) + '...';
-  } else if(string.length <= length){
+  } else {
     return string + '...';
   }
 }

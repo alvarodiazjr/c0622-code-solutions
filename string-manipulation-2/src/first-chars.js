@@ -5,10 +5,11 @@
 - check if the string.length is less than length
 - if so return the string as normal
 */
-function firstChars(length, string){
-  if(string.length >= length){
+
+function firstChars(length, string) {
+  if (string.length >= length) {
     return string.slice(0, length);
-  } else if(string.length <= length){
+  } else {
     return string;
   }
 }

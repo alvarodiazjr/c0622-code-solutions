@@ -1,0 +1,69 @@
+.container {
+  max-width: auto;
+  margin: auto;
+  position: relative;
+}
+
+h2{
+  font-weight: bolder;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.purple {
+  color: white;
+  background-color: rgb(100, 36, 173);
+  border-radius: 5px;
+  border-style: none;
+  padding: 10px 20px;
+  font-size: 30px;
+}
+
+.pink {
+  color: white;
+  background-color: rgb(233, 100, 83);
+  border-radius: 5px;
+  border-style: none;
+  padding: 5px 15px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  padding-top: 50px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.content-box{
+  position: relative;
+  background-color: white;
+  padding: 40px;
+  max-width: 250px;
+  top: 15em;
+  bottom: 5em;
+  left: 35em;
+  right: 5em;
+  text-align: center;
+}
+
+.block-display{
+  display: block;
+}
+
+.display-none{
+  display: none;
+}

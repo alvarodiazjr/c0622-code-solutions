@@ -1,0 +1,55 @@
+.container{
+  max-width: 800px;
+  margin: auto auto;
+}
+
+.row{
+  display: flex;
+}
+
+.column-full{
+  flex-basis: 100%;
+}
+
+.column-one-fifth{
+  flex-basis: 20%;
+}
+
+h1, p{
+  font-family: 'DM Sans';
+}
+
+.align-center{
+  text-align: center;
+}
+
+.gray-text{
+  color: rgb(212, 209, 209);
+}
+
+.line-through{
+  text-decoration: line-through;
+}
+
+.pink-background{
+  border-radius: 5px;
+  background-color: rgb(255, 241, 238);
+}
+
+.contain{
+  object-fit: cover;
+}
+
+.margin{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+img{
+  height: 450px;
+  width: 300px;
+}
+
+.justify-content{
+  justify-content: center;
+}

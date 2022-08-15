@@ -6,7 +6,7 @@ const book1 = {
 
 const { title, author, libraryID } = book1;
 
-console.log(`The title of the book is ${title}, the author is ${author},and the library id is ${libraryID}`);
+console.log(`The title of the book is ${title}, the author is ${author}, and the library id is ${libraryID}`);
 
 const book2 = {
   title: 'Les Fleurs du mal',

@@ -1,0 +1,367 @@
+    1  http
+    2  git switch http-messages
+    3  git branch -d http-messages
+    4  git branch http-messages
+    5  git switch http-messages
+    6  http
+    7  http https://example.com
+    8  http --verbose https://example.com
+    9  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   10  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   11  git status
+   12  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   13  http --body GET https://example.com > http-messages/index.html
+   14  git status
+   15  git status
+   16  git status
+   17  git add http-messages/
+   18  git status
+   19  git commit -m "Completed http-messages exercise."
+   20  git push origin http-messages
+   21  git switch main
+   22  git status
+   23  git pull origin main
+   24  git branch javascript-ajax
+   25  git branch --list
+   26  git switch javascript-ajax
+   27  git status
+   28  git add javascript-ajax/
+   29  git status
+   30  git commit -m "still working."
+   31  git switch main
+   32  git status
+   33  git branch --list
+   34  git switch javascript-ajax
+   35  git status
+   36  git add javascript-ajax/users.js 
+   37  git status
+   38  git commit -m "Completed javascript-ajax exercise."
+   39  git push origin javascript-ajax
+   40  git status
+   41  git switch main
+   42  git status
+   43  git pull origin main
+   44  git status
+   45  git status
+   46  git pull origin main
+   47  git branch --list
+   48  git status
+   49  git status
+   50  git pull origin main
+   51  git pull origin main
+   52  git pull origin main
+   53  git pull origin main
+   54  git status
+   55  git pull origin main
+   56  git switch javascript-carousel
+   57  git branch javascript-carousel
+   58  git branch --list
+   59  git switch javascript-carousel
+   60  git status
+   61  git status
+   62  git add javascript-carousel/
+   63  git status
+   64  git commit -m "still working on button and left click."
+   65  git switch main
+   66  git status
+   67  git branch javascript-bank
+   68  git switch javascript-bank
+   69  git status
+   70  git add javascript-bank/
+   71  git status
+   72  git commit -m " still working on getTotalAssets."
+   73  git switch main
+   74  git status
+   75  git status
+   76  git status
+   77  git branch api-research
+   78  git branch --list
+   79  git switch api-research
+   80  http https://www.breakingbadapi.com/api/
+   81  http https://www.breakingbadapi.com/api/characters
+   82  http https://www.breakingbadapi.com/api/characters
+   83  http --verbose https://www.breakingbadapi.com/api/characters
+   84  http --verbose https://www.breakingbadapi.com/api/characters?limit=10&offset=10
+   85  http --verbose https://www.breakingbadapi.com/api/characters?name=Walter
+   86  http --verbose https://www.breakingbadapi.com/api/quotes
+   87  http --verbose https://www.breakingbadapi.com/api/quotes/random
+   88  http --verbose https://www.breakingbadapi.com/api/quote/random
+   89  http --verbose https://www.breakingbadapi.com/api/episodes
+   90  http --verbose https://www.breakingbadapi.com/api/episodes?series=Breaking+Bad
+   91  http --verbose https://www.breakingbadapi.com/api/characters?limit=10&offset=10
+   92  http --verbose https://www.breakingbadapi.com/api/episodes/characters
+   93  http --verbose https://www.breakingbadapi.com/api/characters?name=Walter
+   94  http --verbose https://www.breakingbadapi.com/api/characters?category=Breaking+Bad
+   95  http --verbose https://www.breakingbadapi.com/api/characters?limit=10&offset=10?category=Breaking+Bad
+   96  http --verbose https://www.breakingbadapi.com/api/characters/1
+   97  http https://www.breakingbadapi.com/api/characters/1
+   98  http https://www.breakingbadapi.com/api/quote?author=Walter+White
+   99  http https://www.breakingbadapi.com/api/death?name=Walter+White
+  100  http https://www.breakingbadapi.com/api/characters?name=Hank
+  101  http https://www.breakingbadapi.com/api/characters?limit=10&offset=10
+  102  http https://www.breakingbadapi.com/api/characters?name=Henry
+  103  http https://www.breakingbadapi.com/api/death?name=Henry+Schrader
+  104  http https://www.breakingbadapi.com/api/random-death
+  105  http https://www.breakingbadapi.com/api/quote/random
+  106  http https://www.breakingbadapi.com/api/quote/random
+  107  http https://www.breakingbadapi.com/api/quote/random
+  108  http https://www.breakingbadapi.com/api/quote/random?series=Breaking+Bad
+  109  http https://www.breakingbadapi.com/api/quote/random?series=Breaking+Bad
+  110  http https://www.breakingbadapi.com/api/quote/random?series=Breaking+Bad
+  111  git switch main
+  112  git status
+  113  git pull origin main
+  114  git branch string-manipulation-3
+  115  git switch string-manipulation-3
+  116  git status
+  117  git add string-manipulation-3/
+  118  git status
+  119  git commit -m "still working."
+  120  git push origin string-manipulation-3 
+  121  git switch main
+  122  git branch --list
+  123  git switch api-research
+  124  http https://www.breakingbadapi.com/api/death?name=Gustavo+Fring
+  125  http https://www.breakingbadapi.com/api/quote/random
+  126  http https://www.breakingbadapi.com/api/quote/random
+  127  http https://www.breakingbadapi.com/api/death/random
+  128  http https://www.breakingbadapi.com/api/random-death
+  129  http https://www.breakingbadapi.com/api/random-death
+  130  http https://www.breakingbadapi.com/api/characters?name=Walter+White
+  131  http https://www.breakingbadapi.com/api/characters
+  132  http https://www.breakingbadapi.com/api/characters?category=Breaking+Bad
+  133  git status
+  134  git switch main
+  135  git status
+  136  git branch --list
+  137  git switch string-manipulation-3 
+  138  git status
+  139  git add string-manipulation-3/src/is-anagram.js 
+  140  git add string-manipulation-3/src/is-palindromic.js 
+  141  git add string-manipulation-3/src/reverse-words.js 
+  142  git status
+  143  git commit -m "finished problems 1-3 still working on 4."
+  144  git push origin string-manipulation-3 
+  145  git status
+  146  git switch main
+  147  git branch --list
+  148  git pull origin main
+  149  git branch array-manipulation-3
+  150  git branch --list
+  151  git switch array-manipulation-3 
+  152  git status
+  153  git status
+  154  git add array-manipulation-3/
+  155  git status
+  156  git commit -m "completed all problems except for zip problem."
+  157  git push origin array-manipulation-3 
+  158  git status
+  159  git status
+  160  git status
+  161  git switch main
+  162  git switch string-manipulation-3 
+  163  git status
+  164  git add string-manipulation-3/src/title-case.js 
+  165  git status
+  166  git commit -m "still working on titleCase."
+  167  git switch main
+  168  git switch array-manipulation-3 
+  169  git status
+  170  git add array-manipulation-3/src/zip.js 
+  171  git status
+  172  git commit -m "still working on zip."
+  173  git switch main
+  174  git branch --list
+  175  git branch object-manipulation-3
+  176  git switch object-manipulation-3 
+  177  git status
+  178  git status
+  179  git add object-manipulation-3/
+  180  git status
+  181  git commit -m "working on getting values."
+  182  git switch main
+  183  git switch array-manipulation-3 
+  184  git status
+  185  git add array-manipulation-3/
+  186  git status
+  187  git commit -m "Completed array-manipulation-3 exercise."
+  188  git push origin array-manipulation-3 
+  189  git status
+  190  git switch main
+  191  git switch string-manipulation-3 
+  192  git status
+  193  git add string-manipulation-3/
+  194  git status
+  195  git commit -m "Completed string-manipulation-3 exercise."
+  196  git push origin string-manipulation-3 
+  197  git status
+  198  git switch main
+  199  git switch array-manipulation-3 
+  200  git status
+  201  git status
+  202  git status
+  203  git switch main
+  204  git status
+  205  git pull origin main
+  206  git branch es6-const-let
+  207  git branch --list
+  208  git switch es6-const-let 
+  209  git status
+  210  git add es6-const-let/
+  211  git status
+  212  git commit -m "Completed es6-const-let exercise."
+  213  git push origin es6-const-let 
+  214  git status
+  215  git switch main
+  216  git status
+  217  git pull origin main
+  218  git branch es6-template-literals
+  219  git branch --list
+  220  git switch es6-template-literals 
+  221  git status
+  222  git add es6-template-literals/
+  223  git status
+  224  git commit -m "Completed es6-template-literals Exercise."
+  225  git push origin es6-template-literals 
+  226  git status
+  227  git status
+  228  git switch main
+  229  git status
+  230  git switch es6-template-literals 
+  231  git status
+  232  git switch main
+  233  git pull origin main
+  234  git branch es6-destructing
+  235  git branch --list
+  236  git switch es6-destructing 
+  237  git status
+  238  git status
+  239  git add es6-destructuring/
+  240  git status
+  241  git commit -m "Completed es6-destructing."
+  242  git push origin es6-destructing 
+  243  git status
+  244  git add es6-destructuring/main.js 
+  245  git status
+  246  git commit -m "Added a missing space."
+  247  git push orig
+  248  git push origin es6-destructing 
+  249  git status
+  250  git status
+  251  git branch -M es6-destructuring
+  252  git status
+  253  git branch --list
+  254  git status
+  255  git status
+  256  git push origin es6-destructuring 
+  257  git status
+  258  git switch main
+  259  git status
+  260  git pull origin main
+  261  git branch es6-arrow-functions
+  262  git branch --list
+  263  git switch es6-arrow-functions 
+  264  git status
+  265  git add es6-arrow-functions/
+  266  git status
+  267  git commit -m "Completed es6-arrow-functions exercise."
+  268  git push origin es6-arrow-functions 
+  269  git status
+  270  git switch main
+  271  git switch es6-destructuring 
+  272  git status
+  273  git add es6-destructuring/main.js 
+  274  git status
+  275  git commit -m "included commas for elements that are skipped."
+  276  git push origin es6-destructuring 
+  277  git status
+  278  git switch main
+  279  git status
+  280  git status
+  281  git pull origin main
+  282  git status
+  283  git status
+  284  git pull origin main
+  285  git status
+  286  git status
+  287  git pull origin main
+  288  git branch command-line-basics
+  289  git switch command-line-basics 
+  290  git status
+  291  cd command-line-basics
+  292  man man
+  293  man cat
+  294  cat laziness.txt
+  295  cat impatience.txt
+  296  cat hubris.txt
+  297  man cat
+  298  cat laziness.txt impatience.txt hubris.txt 
+  299  cat laziness.txt impatience.txt hubris.txt >three-virtues.txt
+  300  cat three-virtues.txt 
+  301  cd command-line-basics
+  302  man echo
+  303  cd command-line-basics
+  304  man ls
+  305  man ls
+  306  ls
+  307  ls -a
+  308  ls -F
+  309  ls -a -F
+  310  ls lfz-staff/
+  311  ls lfz-staff/ -a
+  312  ls lfz-staff/ -F
+  313  ls lfz-staff/ -a -F
+  314  ls lfz-staff/ -aF
+  315  ls -aF lfz-staff > lfz-staff/contents.txt
+  316  cat lfz-staff/contents.txt 
+  317  man pwd
+  318  pwd
+  319  pwd > i-was-here.txt
+  320  ls
+  321  cat i-was-here.txt 
+  322  cd command-line-basics
+  323  man echo
+  324  echo 'Hello, World!''
+  325  cd command-line-basics
+  326  echo 'Hello, World!'
+  327  echo 'Hello, World!' > hello.txt
+  328  ls
+  329  cat hello.txt
+  330  man touch
+  331  man touch
+  332  touch tag-youre-it.txt
+  333  touch snoot/boop.txt
+  334  ls snoot/
+  335  man mkdir
+  336  mkdir parent
+  337  man mkdir
+  338  ls parent/
+  339  ls
+  340  mkdir -p parent/child/grandchild
+  341  touch parent/child/grandchild/.gitkeep
+  342  ls -a parent/
+  343  ls -a parent/child/grandchild/
+  344  man mv
+  345  man mv
+  346  mv pokiemans pokemon
+  347  ls
+  348  man rm
+  349  rm lol.txt
+  350  ls
+  351  rm -r kill-me/
+  352  ls
+  353  man cp
+  354  cp and-then.txt no-and-then.txt
+  355  ls
+  356  cat and-then.txt no-and-then.txt 
+  357  man history
+  358  history
+  359  history > command-history.txt
+  360  rm command-history.txt 
+  361  mkdir history
+  362  touch history/command-history.txt
+  363  rm history/
+  364  rm history
+  365  rm history/command-history.txt 
+  366  touch history/history > command-history.txt
+  367  history > command-history.txt

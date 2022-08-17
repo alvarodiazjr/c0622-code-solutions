@@ -30,7 +30,8 @@ function createDeck() {
 
   for (var i = 0; i < suits.length; i++) {
     for (var x = 0; x < ranks.length; x++) {
-      deck.push(ranks[x] + '-' + suits[i]);
+      // deck.push(ranks[x] + '-' + suits[i]);
+      deck.push(ranks[x] + ' ' + suits[i]);
     }
   }
   return deck;
@@ -57,3 +58,28 @@ shuffleDeck(deck);
 dealCards(deck);
 dealCards(deck);
 console.log(players);
+
+// all players now get randomly assigned two cards each.
+// need to give values to the cards and add them together.
+
+function addCards() {
+  for (var i = 0; i < players.length; i++) {
+    var cards = players[i].hand;
+    console.log(cards);
+    for (var x = 0; x < cards.length; x++) {
+      var cardIndex = cards[x].charAt(0);
+      if (cardIndex === 'A') {
+        cardIndex = 11;
+      } else if (cardIndex === 'J' || cardIndex === 'Q' || cardIndex === 'K') {
+        cardIndex = 10;
+      } else {
+        cardIndex = parseInt(cardIndex);
+      }
+      players[i].totalValue += cardIndex;
+      console.log(cardIndex);
+    }
+  }
+}
+
+addCards();
+// players[i].totalValue = cardIndex;

@@ -82,4 +82,14 @@ function addCards() {
 }
 
 addCards();
+
+// function getWinner() {
+//   addCards();
+//   for (var i = 0; i < players.length; i++) {
+//     var winner = Math.max(players[i].totalValue);
+//     console.log(winner);
+//   }
+// }
+
+// getWinner();
 // players[i].totalValue = cardIndex;

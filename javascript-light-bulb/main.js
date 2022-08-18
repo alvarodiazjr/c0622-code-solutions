@@ -7,15 +7,14 @@ var $button = document.querySelector('.button-color');
 
 var $pageColor = document.querySelector('html');
 
-var clicks = 0;
-
-$button.addEventListener('click', function (event){
-  clicks++;
-  if(clicks % 2 !== 0){
-    $button.className = 'button-color dark';
-    $pageColor.className = 'html dark';
-  } else if(clicks % 2 === 0){
-    $button.className = 'button-color light';
-    $pageColor.className = 'html light';
+function lightSwitch() {
+  if ($button.className === 'button-color on') {
+    $button.className = 'button-color off';
+    $pageColor.className = 'html off';
+  } else {
+    $button.className = 'button-color on';
+    $pageColor.className = 'html on';
   }
-});
+}
+
+$button.addEventListener('click', lightSwitch);

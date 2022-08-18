@@ -3,11 +3,11 @@
   margin: 0;
 }
 
-html.light {
+html.on {
   background-color: rgb(248, 248, 231);
 }
 
-html.dark {
+html.off {
   background-color: black;
 }
 
@@ -28,12 +28,12 @@ html.dark {
   width: 200px;
 }
 
-.button-color.light {
+.button-color.on {
   background-color: rgb(245, 245, 108);;
   box-shadow: 0px -10px rgb(247, 247, 189);
 }
 
-.button-color.dark {
+.button-color.off {
   background-color: rgb(32, 32, 32);;
   box-shadow: 0px -8px black;
 }

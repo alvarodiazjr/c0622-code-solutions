@@ -1,5 +1,24 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
+/*
+- make an array of objects names players.
+- assign 4 objects with a name, hand, and totalValue property.
+- make a function that creates a card deck.
+- hard code all suits and ranks.
+- loop through both and assign values to an array named deck.
+- make a function that shuffles the deck.
+- use the math.random method to randomize the deck.
+- deal two cards by using the pop method on the shuffled deck.
+- assign the cards to the hand property in each object.
+- make a function to add the cards value.
+- if the first character of each index is an 'A' return the value as 11.
+- if the first character of each index is a 'J', 'Q', 'K' return the value as 10.
+- or else just parse the string number to an actual number.
+- add both of the values together and assign it to the totalValue property.
+- check each persons total value and whatever number is the highest assign
+it to winner variable.
+*/
+
 var players = [
   {
     name: 'Walter',
@@ -65,7 +84,7 @@ console.log(players);
 function addCards() {
   for (var i = 0; i < players.length; i++) {
     var cards = players[i].hand;
-    console.log(cards);
+    // console.log(cards);
     for (var x = 0; x < cards.length; x++) {
       var cardIndex = cards[x].charAt(0);
       if (cardIndex === 'A') {
@@ -76,20 +95,28 @@ function addCards() {
         cardIndex = parseInt(cardIndex);
       }
       players[i].totalValue += cardIndex;
-      console.log(cardIndex);
+      // console.log(cardIndex);
     }
   }
 }
 
-addCards();
+// addCards();
 
-// function getWinner() {
-//   addCards();
-//   for (var i = 0; i < players.length; i++) {
-//     var winner = Math.max(players[i].totalValue);
-//     console.log(winner);
-//   }
-// }
+function getWinner() {
+  addCards();
+  var totals = [];
+  var winner = 0;
+  for (var i = 0; i < players.length; i++) {
+    // var winner = Math.max(players[i].totalValue);
+    totals.push(players[i].totalValue);
+  }
+  console.log(totals);
+  totals.forEach(element => {
+    if (winner < element) {
+      winner = element;
+    }
+  });
+  console.log(winner);
+}
 
-// getWinner();
-// players[i].totalValue = cardIndex;
+getWinner();

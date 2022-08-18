@@ -17,6 +17,8 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 - add both of the values together and assign it to the totalValue property.
 - check each persons total value and whatever number is the highest assign
 it to winner variable.
+- if the players totalValue is equal to the winningNum then they are the winner.
+- console.log the winning player.
 */
 
 var players = [
@@ -49,7 +51,6 @@ function createDeck() {
 
   for (var i = 0; i < suits.length; i++) {
     for (var x = 0; x < ranks.length; x++) {
-      // deck.push(ranks[x] + '-' + suits[i]);
       deck.push(ranks[x] + ' ' + suits[i]);
     }
   }
@@ -75,16 +76,11 @@ function dealCards() {
 var deck = createDeck();
 shuffleDeck(deck);
 dealCards(deck);
-dealCards(deck);
-console.log(players);
-
-// all players now get randomly assigned two cards each.
-// need to give values to the cards and add them together.
 
 function addCards() {
+  dealCards(deck);
   for (var i = 0; i < players.length; i++) {
     var cards = players[i].hand;
-    // console.log(cards);
     for (var x = 0; x < cards.length; x++) {
       var cardIndex = cards[x].charAt(0);
       if (cardIndex === 'A') {
@@ -95,28 +91,27 @@ function addCards() {
         cardIndex = parseInt(cardIndex);
       }
       players[i].totalValue += cardIndex;
-      // console.log(cardIndex);
     }
   }
 }
 
-// addCards();
-
 function getWinner() {
   addCards();
   var totals = [];
-  var winner = 0;
+  var winningNum = 0;
   for (var i = 0; i < players.length; i++) {
-    // var winner = Math.max(players[i].totalValue);
+    console.log(players[i].name + ': ' + players[i].hand[0] + ' | ' + players[i].hand[1]);
     totals.push(players[i].totalValue);
-  }
-  console.log(totals);
-  totals.forEach(element => {
-    if (winner < element) {
-      winner = element;
+    totals.forEach(element => {
+      if (winningNum < element) {
+        winningNum = element;
+      }
+    });
+    if (players[i].totalValue === winningNum) {
+      var winner = players[i];
     }
-  });
-  console.log(winner);
+  }
+  console.log('Winner is:', winner.name + ' with a score of ' + winner.totalValue);
 }
 
 getWinner();

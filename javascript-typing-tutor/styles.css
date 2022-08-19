@@ -1,0 +1,24 @@
+.row{
+  margin-top: 20%;
+  align-items: center;
+}
+
+h1{
+  text-align: center;
+  white-space: normal;
+  font-family: system-ui;
+  font-weight: 900;
+}
+
+.black-underline{
+  border-bottom: thick solid black;
+}
+
+.green{
+  color: limegreen;
+}
+
+.red{
+  border-bottom: thick solid red;
+  color: red;
+}

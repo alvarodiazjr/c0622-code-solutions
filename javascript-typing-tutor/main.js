@@ -1,22 +1,19 @@
-/*
-- if span[i] === event.key apply the green class, and push the black underline to
-the next character.
-- if span[i] is not equal apply red class until the span[i] is pressed correctly then
-switch to green class.
-- once all span elements are green change the all span classes to normal.
-*/
+var $spanKeys = document.querySelectorAll('span');
+var index = 0;
+var nextKey = $spanKeys[index];
 
-var $span = document.querySelectorAll('span');
-
-function typing(event){
-  var key = event.key;
-  console.log(key);
-  for(var i = 0; i < $span.length; i++){
-    var letter = $span[i];
-    if(letter.textContent === key){
-      letter.className = 'green';
+function keyPress(event) {
+  var spaceKey = nextKey.textContent.charCodeAt(0) === 160;
+  if ((event.key === nextKey.textContent) || (event.key === ' ' && spaceKey)) {
+    nextKey.className = 'green';
+    index++;
+    if (index < $spanKeys.length) {
+      nextKey = $spanKeys[index];
+      nextKey.className = 'black-underline';
     }
+  } else {
+    nextKey.className = 'red';
   }
 }
 
-document.addEventListener('keydown', typing);
+document.addEventListener('keydown', keyPress);

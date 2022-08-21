@@ -9,11 +9,3 @@ function Transaction(type, amount) {
     this.amount = 'invalid number';
   }
 }
-
-Transaction.prototype.transaction = function() {
-  var transaction = {
-    type: this.type,
-    amount: this.amount
-  }
-  return transaction;
-};

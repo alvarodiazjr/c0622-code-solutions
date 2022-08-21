@@ -7,14 +7,6 @@ function Account(number, holder) {
   this.transactions = [];
 }
 
-Account.prototype.number = function () {
-  return this.number;
-};
-
-Account.prototype.holder = function () {
-  return this.holder;
-};
-
 Account.prototype.deposit = function (amount) {
   var transaction = new Transaction();
   if (amount > 0 && Number.isInteger(amount)) {

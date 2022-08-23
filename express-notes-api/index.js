@@ -21,7 +21,7 @@ app.get('/api/notes', (req, res, next) => {
 
 app.get('/api/notes/:id', (req, res) => {
   const num = parseInt(req.params.id, 10);
-  if (!Number.isInteger(num)) {
+  if (!Number.isInteger(num) || num < 0) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (notes[num]) {
     res.status(200).json(notes[num]);
@@ -33,16 +33,17 @@ app.get('/api/notes/:id', (req, res) => {
 app.post('/api/notes', (req, res) => {
   if (!req.body.content) {
     res.status(400).json({ error: 'content is a required field' });
-  } else {
-    notes[nextId] = req.body;
-    notes[nextId].id = nextId;
-    res.status(201).json(notes[nextId]);
-    nextId++;
+    return;
   }
   fs.writeFile('data.json', JSON.stringify(data, null, 2), err => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: 'An unexpected error occured.' });
+    } else {
+      notes[nextId] = req.body;
+      notes[nextId].id = nextId;
+      res.status(201).json(notes[nextId]);
+      nextId++;
     }
   });
 });

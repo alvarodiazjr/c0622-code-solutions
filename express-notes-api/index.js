@@ -50,7 +50,7 @@ app.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
   const num = parseInt(req.params.id, 10);
-  if (!Number.isInteger(num)) {
+  if (!Number.isInteger(num) || num < 0) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (Number.isInteger(num) && !notes[num]) {
     res.status(404).json({ error: 'cannot find note with id ' + num });
@@ -68,7 +68,7 @@ app.delete('/api/notes/:id', (req, res) => {
 
 app.put('/api/notes/:id', (req, res) => {
   const num = parseInt(req.params.id, 10);
-  if (!Number.isInteger(num)) {
+  if (!Number.isInteger(num) || num < 0) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!req.body.content) {
     res.status(400).json({ error: 'content is a required field' });

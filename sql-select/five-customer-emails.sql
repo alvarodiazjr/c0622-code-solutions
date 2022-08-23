@@ -3,4 +3,4 @@ select "customerId",
        "lastName",
        "email"
   from "customers"
-limit 5;
+ limit 5;

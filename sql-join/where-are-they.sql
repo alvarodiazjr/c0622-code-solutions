@@ -1,4 +1,4 @@
-select "addresses"."line1" as "addresses",
+select "addresses"."line1" as "address",
        "cities"."name" as "city",
        "addresses"."district",
        "countries"."name" as "country"

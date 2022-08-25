@@ -1,8 +1,8 @@
 WITH "cteRevenue" AS (
   SELECT "films"."title" AS "Title",
-         "films"."filmId" AS "filmID",
          "films"."description" AS "Description",
          "films"."rating" AS "Rating",
+         "films"."filmId" AS "filmID",
          SUM("payments"."amount") AS "Revenue"
     FROM "films"
     JOIN "inventory" USING ("filmId")
@@ -12,8 +12,7 @@ WITH "cteRevenue" AS (
 ),
 
 "cteCost" AS (
-  SELECT "films"."title" AS "Title",
-         "films"."filmId" AS "filmID",
+  SELECT "films"."filmId" AS "filmID",
          SUM("films"."replacementCost") AS "Cost"
     from "films"
     JOIN "inventory" USING ("filmId")

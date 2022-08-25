@@ -14,16 +14,16 @@ WITH "cteRevenue" AS (
 "cteCost" AS (
   SELECT "films"."filmId" AS "filmID",
          SUM("films"."replacementCost") AS "Cost"
-    from "films"
+    FROM "films"
     JOIN "inventory" USING ("filmId")
   GROUP BY "films"."filmId"
 )
 
-SELECT "cteRevenue"."Title",
-       "cteRevenue"."Description",
-       "cteRevenue"."Rating",
-       "cteRevenue"."Revenue" - "cteCost"."Cost" AS "Total Profit"
-  from "cteRevenue"
+SELECT "Title",
+       "Description",
+       "Rating",
+       "Revenue" - "Cost" AS "Total Profit"
+  FROM "cteRevenue"
   JOIN "cteCost" USING ("filmID")
  ORDER BY "Total Profit" DESC
  LIMIT 5;

@@ -1,3 +1,4 @@
+/* exported Student */
 class Student {
   constructor(firstName, lastName, subject) {
     this.firstName = firstName;
@@ -13,6 +14,3 @@ class Student {
     return `Hello, my name is ${this.firstName} ${this.lastName} and I am studying ${this.subject}.`;
   }
 }
-
-// eslint-disable-next-line no-console
-console.log(Student);

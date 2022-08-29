@@ -1,3 +1,4 @@
+/* exported Stopwatch  */
 class Stopwatch {
   constructor(startTimeInSeconds) {
     this.elapsedSeconds = startTimeInSeconds;
@@ -25,6 +26,3 @@ class Stopwatch {
     this.elapsedSeconds = 0;
   }
 }
-
-// eslint-disable-next-line no-console
-console.log(Stopwatch);

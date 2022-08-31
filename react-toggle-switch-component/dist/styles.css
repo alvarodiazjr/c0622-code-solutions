@@ -1,0 +1,49 @@
+.row {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.text {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+.clicked-wrapper {
+  height: 2.5rem;
+  width: 4rem;
+  background-color: rgb(39 158 45);
+  border-radius: 3rem;
+  position: relative;
+}
+
+.button-wrapper {
+  height: 2.5rem;
+  width: 4rem;
+  background-color: gray;
+  border-radius: 3rem;
+  position: relative;
+}
+
+.button-off {
+  border: none;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  top: 4px;
+  left: 3px;
+}
+
+.button-on {
+  border: none;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  top: 4px;
+  right: 3px;
+}

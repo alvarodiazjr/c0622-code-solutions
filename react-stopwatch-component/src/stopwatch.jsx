@@ -42,7 +42,7 @@ class Stopwatch extends React.Component {
     }
     return (
       <div className='row'>
-        <div className='column-full wrapper'>
+        <div className='column-full'>
           <h1 onClick={this.handleClockClick} className='count'>{count}</h1>
           <i onClick={this.handleClockClick} className='fa-regular fa-circle'></i>
         </div>

@@ -1,0 +1,48 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 5rem;
+  height: 3rem;
+  width: 7rem;
+  border: solid black;
+  box-shadow: 5px 5px 5px black;
+  font-size: 15px;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.no-color {
+  background-color: rgb(185 185 185);
+}
+
+.purple {
+  background-color: rgb(70 8 70);
+  color: white;
+}
+
+.light-purple {
+  background-color: rgb(150 69 182);
+  color: white;
+}
+
+.red {
+  background-color: salmon;
+  color: white;
+}
+
+.orange {
+  background-color: rgb(243 198 115);
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white {
+  background-color: white;
+}

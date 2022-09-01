@@ -1,0 +1,47 @@
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  border: solid;
+  width: 30%;
+  background-color: white;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+h1 {
+  padding: 1rem 2rem;
+}
+
+.links {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.links:hover {
+  background-color: rgb(204 203 203);
+}

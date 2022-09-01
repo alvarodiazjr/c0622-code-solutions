@@ -1,0 +1,32 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.column-full {
+  width: 100px;
+  margin-top: 2rem;
+  flex-basis: 100%;
+}
+
+.fa-circle {
+  position: relative;
+  font-size: 12rem;
+  cursor: pointer;
+}
+
+.fa-play,
+.fa-pause {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.count {
+  position: absolute;
+  cursor: pointer;
+  font-size: 3.5rem;
+  top: 4rem;
+  left: 0;
+  right: 0;
+}

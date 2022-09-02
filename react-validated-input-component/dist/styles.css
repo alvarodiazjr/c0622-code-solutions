@@ -1,0 +1,28 @@
+* {
+  font-size: 20px;
+  margin: 0.5rem;
+}
+
+#password {
+  border: solid black;
+  border-radius: 5px;
+}
+
+.fa-xmark {
+  font-size: 2rem;
+  color: red;
+}
+
+.fa-check {
+  font-size: 2rem;
+  color: green;
+}
+
+.input {
+  display: flex;
+  align-content: center;
+}
+
+p {
+  color: red;
+}

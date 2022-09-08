@@ -1,0 +1,8 @@
+1 .User can sign up.
+-
+2. User can sign in.
+-
+3. User can stay signed in (even if they refresh the page).
+-
+4. User can sign out
+-

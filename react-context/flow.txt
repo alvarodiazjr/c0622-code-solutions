@@ -1,8 +1,79 @@
-1 .User can sign up.
--
-2. User can sign in.
--
-3. User can stay signed in (even if they refresh the page).
--
-4. User can sign out
--
+1. ** USER CAN SIGN UP. **
+- When a user wants to sign up they will press either on the sign up button on
+the right side of the navbar or they can press the register now text.
+
+- If you click either one the hash fragment of the url will change to #sign-up due
+to the 'hashchange' event listener on the window object.
+
+- Once either one is clicked it will trigger a re-render of the page due to the
+setState() method inside the window event listener.
+
+- The user can then input a username and password which will trigger the handleChange()
+method inside of the auth-form.jsx module.
+
+- handleChange() updates the state with the value of what is being typed.
+
+- Then when the user has entered their information and they click the register button
+it sends a POST request to the server.
+
+- In the POST request it checks that you entered a valid username and password or else
+it'll throw an error, if it is valid then it will hash your password into a random string.
+
+- Then it querys the database and sends the username and 'Hashed'password into the
+database using PostgreSQL insert code.
+
+- The POST request also changes the hash fragment to #sign-in to change the view
+back to the login page.
+
+
+2. ** USER CAN SIGN IN. **
+- Assuming that the user has already created an account the view should already
+be on the login page with a hash url #sign-in.
+
+- The first steps are similiar as in when the user starts filling out their information
+in the text input it triggers the handleChange() method inside of auth-form.jsx module.
+
+- handleChange() updates the state with the input value and each time the state is changed
+it re-renders the page.
+
+- Once the information is inputted it will trigger the handleSubmit inside auth-form.jsx.
+
+- The handleSubmit() method sends a POST request to the server.
+
+- In the POST method in index.js it checks if you entered a valid username and
+password if not it'll throw you an error.
+
+- Then if the are valid inputs it querys the database using PostgreSQL code that
+selects a userID and hashedpassword from the users database.
+
+- If it couldnt find a matching user it'll throw an invalid login error.
+
+- If it finds a matching user it verifys that the inputted password and hashedpassword
+from the database match, if they dont it'll throw an error, or if they do match
+it'll assign a token to the user, and assign the token to local storage.
+
+- Once succesfully signed in it triggers the home.jsx module which renders the page
+to a rick roll gif, as well as change the hash route to just a '#'.
+
+
+3. ** USER CAN STAY SIGNED IN (EVEN IF THEY REFRESH THE PAGE). **
+- Once the page is reloaded it re-renders the page which triggers componentDidMount()
+in app.jsx which checks for a hash change.
+
+- Then the browser checks in local storage to see if theres a valid token that
+belongs to a user.
+
+- If the token is valid and belongs to a user setState sets the user to the user property
+and changes the isAuthorizing property to false, signifying the user has been
+authorized.
+
+
+4. ** USER CAN SIGN OUT. **
+- Once your signed in on the Home page at the top right of the navbar theres a
+sign out button.
+
+- Once the button is clicked it triggers handleSignOut() in app.jsx, as well
+as triggering a hashchange which changes the hash to the sign-in-page.
+
+- handleSignOut removes the user token that was saved to local storage, and
+changes the state property user to null.

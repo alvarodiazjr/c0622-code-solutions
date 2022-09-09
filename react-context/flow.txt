@@ -1,79 +1,131 @@
 1. ** USER CAN SIGN UP. **
-- When a user wants to sign up they will press either on the sign up button on
-the right side of the navbar or they can press the register now text.
 
-- If you click either one the hash fragment of the url will change to #sign-up due
-to the 'hashchange' event listener on the window object.
+First the application gets run by app.jsx, the constructor function runs first
+assigning properties to the state, and binding methods.
+The render method gets called with react elements that point to the Navbar
+module and the PageContainer module with children that calls the renderPage method
+of the this object.
+In the Navbar module it calls a render function that destructures the user and
+handleSignOut properties of this.context. Then it returns a react dom tree that
+contains navbar react elements and styling. Theres a conditional that checks if
+user prop is equal to null; if it is add two anchors for Sign In and Sign Up, or
+else add an anchor for Sign Out.
+In the PageContainer module theres a syles var that is contains a page property
+with a value of styling the page, as well as a function. In the function its
+returning a react dom tree of a div with styling from the styles variable and
+children with the var children. Children parameter refers to which page renderPage()
+will render in app.jsx either Home, Auth, or NotFound.
+RenderPage( ) in app.jsx assigns the route of the state object and assigns it
+to a path variable. Route is determined by calling parseRoute and passing in the
+window.location.hash. So it checks the url after the ‘#’. Path is whatever comes
+after ‘#’ in the url.
+If path is equal to ‘ ‘ (empty string) renderPage() will return the Home react
+element which triggers home.jsx.
+If path is equal to ‘sign-in‘ or ‘sign-up’ renderPage() will return the Auth
+react element which triggers auth.jsx.
+If path is equal to anything else besides those three options renderPage()
+will return the NotFound react element which triggers notfound.jsx.
+Since when you first load up the page the hash is ‘sign-in’ renderPage() calls
+auth.jsx
+In auth.jsx theres a render method that destructures the properties user, route,
+and handleSignIn from the context prop of this object.
+Theres a conditional that checks there is a user logged in then redirect to home page.
+Theres a ternary expression for the welcomeMessage that checks if the route.path
+is equal to ‘sign-in’ then the welcomeMessage will say ‘Please sign in to continue’,
+or else it’ll say ‘Create an account to get started’.
+Now that the page is rendered the componentDidMount method in app.jsx will run.
+In componentDidMount it’s listening for a hashchange on the window object, and
+if a hashchange is triggered it will update the route prop in state to the updated
+hash in the url. It also looks for a user token in local storage to determine if
+a user is signed in or not. As well as setting the isAuthorizing value to false.
+Now in order to create an account we press either Sign Up button or Register now text.
+Lets say we press the Sign Up button, so now the url has changed to ‘#sign-up’.
+This triggers parse-route.js and will replace the old hashroute with the new
+hashroute and assign it to path. Now the sign-up page has updated the hashroute,
+updated the text to say ‘Sign in instead’, updated the button text to ‘Register’,
+and updated the WelcomeMessage to say ‘Create an account to get started’.
+Now when we start inputting our username and password everytime we hit a key it
+triggers handleChange in auth-form.jsx.
+Each input triggers a re-render of the page because handleChange calls the
+setState method and updates the username and password props of the state object.
+Once your username and password is ready to be submitted press the Register button.
+The register button will trigger the handleSubmit method which then calls
+for a POST request to the server in index.js
+In index.js we look for a post method that has a url of ‘/api/auth/sign-up’.
+In the post method if you did not provide a username or password you’ll receive
+a 400 error saying ‘username and password are required fields’.
+If you do provide a valid username and password the argon2(which is a password
+hashing function) will hash your password (turn password into random string)
+Then the database is queried using PostgreSQL code that inserts the inputted
+username and hashed password into the ‘users’ database table. Now POST sends the
+response back to the handleSubmit method.
+Now the data is placed into the database and handleSubmit changes the hash route
+to ‘#sign-in’ which triggers a re-render and renders the page back to Auth.jsx
+where the hash route ‘sign-in’.
 
-- Once either one is clicked it will trigger a re-render of the page due to the
-setState() method inside the window event listener.
+2. ** USER CAN SIGN IN **
 
-- The user can then input a username and password which will trigger the handleChange()
-method inside of the auth-form.jsx module.
+So now that we have an account created and saved to the database we can sign in.
+Similar to before everytime we press a key in the Username or Password input
+areas we trigger handleChange in auth.jsx, which re-renders the page because
+we update the username and password props using setState.
+Now that all input is ready to submit we press the Login button.
+The Log In button triggers the handleSubmit method which calls for a POST
+request to the server.
+In index.js the browser looks for a POST method that has an argument of a
+url ‘/api/auth/sign-in’.
+In the post method if you don’t include both a username and password you’ll get
+a 401 error saying ‘invalid login’.
+If you do include a valid username and password it queries the database using
+PostgreSQL code that selects ‘UserId’ and ‘hashPassword’ from the ‘users’ table.
+The query will then assign the result to the user variable.
+If the query doesn’t include a user it will throw a 401 error ‘invalid login’.
+The query then assigns the userId and hashedpassword properties of the user
+object to their own variables.
+Then argon2 verifies the hashedPassword with the inputted password.
+If they don’t match a 401 error ‘invalid login’ gets returned.
+If they do match it will create a unique token and assign it to a token property,
+and add user to the user property.
+Then the Post method sends the result back to the handleSubmit method.
+The hash route is changed from ‘sign-in’ to ‘’(empty string); this triggers
+componentDidMount which gets the token from local storage, and sets the user
+to the user that matches the token as well as setting isAuthorizing to false.
+Now render gets called again and this time the path is ‘’ which returns the
+Home module and changes the Navbar module.
+In Navbar if the user does not equal null the button in the top right is changed
+to a Sign - Out button.
+The Home module calls a render method that checks if there is not a user logged
+in redirect to the ‘sign-in’ page.
+Since we are logged in the page renders a div that contains a rick roll gif.
 
-- handleChange() updates the state with the value of what is being typed.
+3. ** USER CAN STAY SIGNED IN (EVEN IF THEY REFRESH THE PAGE) **
 
-- Then when the user has entered their information and they click the register button
-it sends a POST request to the server.
+Assuming the user is currently signed in and on the homepage.
+When the page is reloaded it re-renders the page which then triggers
+componentDidMount which looks for a hashchange. Since there was no hashchange
+it looks to get a token out of local storage. Since when we logged in the token
+was set in local storage the browser gets the token and matches it with the user.
+Then componentDidMount will change state to the user that the token matches and
+change the isAuthorizing property to false.
+The state change triggers a re-render and the browser sees there is an empty
+string after the hash in the url which makes renderPage() trigger the Home module.
+The render() method re-renders the home page allowing the user to stay on the
+home page when refreshing the page.
 
-- In the POST request it checks that you entered a valid username and password or else
-it'll throw an error, if it is valid then it will hash your password into a random string.
+4. ** USER CAN SIGN OUT **
 
-- Then it querys the database and sends the username and 'Hashed'password into the
-database using PostgreSQL insert code.
-
-- The POST request also changes the hash fragment to #sign-in to change the view
-back to the login page.
-
-
-2. ** USER CAN SIGN IN. **
-- Assuming that the user has already created an account the view should already
-be on the login page with a hash url #sign-in.
-
-- The first steps are similiar as in when the user starts filling out their information
-in the text input it triggers the handleChange() method inside of auth-form.jsx module.
-
-- handleChange() updates the state with the input value and each time the state is changed
-it re-renders the page.
-
-- Once the information is inputted it will trigger the handleSubmit inside auth-form.jsx.
-
-- The handleSubmit() method sends a POST request to the server.
-
-- In the POST method in index.js it checks if you entered a valid username and
-password if not it'll throw you an error.
-
-- Then if the are valid inputs it querys the database using PostgreSQL code that
-selects a userID and hashedpassword from the users database.
-
-- If it couldnt find a matching user it'll throw an invalid login error.
-
-- If it finds a matching user it verifys that the inputted password and hashedpassword
-from the database match, if they dont it'll throw an error, or if they do match
-it'll assign a token to the user, and assign the token to local storage.
-
-- Once succesfully signed in it triggers the home.jsx module which renders the page
-to a rick roll gif, as well as change the hash route to just a '#'.
-
-
-3. ** USER CAN STAY SIGNED IN (EVEN IF THEY REFRESH THE PAGE). **
-- Once the page is reloaded it re-renders the page which triggers componentDidMount()
-in app.jsx which checks for a hash change.
-
-- Then the browser checks in local storage to see if theres a valid token that
-belongs to a user.
-
-- If the token is valid and belongs to a user setState sets the user to the user property
-and changes the isAuthorizing property to false, signifying the user has been
-authorized.
-
-
-4. ** USER CAN SIGN OUT. **
-- Once your signed in on the Home page at the top right of the navbar theres a
-sign out button.
-
-- Once the button is clicked it triggers handleSignOut() in app.jsx, as well
-as triggering a hashchange which changes the hash to the sign-in-page.
-
-- handleSignOut removes the user token that was saved to local storage, and
-changes the state property user to null.
+Assuming the user is currently signed in and on the homepage.
+Since there is a user signed in Navbar creates a Sign Out button on the top right.
+Once we’re ready to sign out we click the sign out button.
+Once the button is clicked it triggers the handleSignOut method in app.jsx
+handleSignOut will remove the user token that is held in local storage and
+call setState to update the user to null.
+In home.jsx if there is no user logged in it calls redirect.jsx and changes
+the hash url to ‘sign-in’.
+Back in app.jsx the handleSignOut calls for a re-render of the page, since the
+path is now equal to ‘sign-in’ renderPage() returns the Auth module, which returns
+the sign in page. render() then renders the sign in page.
+After the render() method componentDidMount() gets called again and updates the
+route property to the hash route ‘sign-in’. Since the token gets removed in
+handleSignOut the user is set null, and isAuthorizing is set to false.
+Now the page is updated and waiting for another change.
